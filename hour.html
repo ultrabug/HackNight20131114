@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Gevent Hour</title>
+		<script type="text/javascript" src="/static/socket.io.js"></script>
+	</head>
+	<body>
+		<div id='hour'></div>
+
+		<script type="text/javascript">
+			WEB_SOCKET_SWF_LOCATION = "/static/flashsocket/WebSocketMain.swf";
+
+			var hour = document.getElementById("hour");
+			var socket_hour = io.connect('/hour');
+
+			socket_hour.on('hour', function (string) {
+				hour.innerHTML = string;
+		    });
+		</script>
+
+	</body>
+</html>

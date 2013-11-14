@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Gevent Hour and Tweet</title>
+		<script type="text/javascript" src="/static/socket.io.js"></script>
+	</head>
+	<body>
+		<div id='hour'></div>
+		<div id='tweet'></div>
+
+		<script type="text/javascript">
+			WEB_SOCKET_SWF_LOCATION = "/static/flashsocket/WebSocketMain.swf";
+
+			var hour = document.getElementById("hour");
+			var tweet = document.getElementById("tweet");
+			var socket_tweet = io.connect('/tweet');
+
+			socket_tweet.on('hour', function (string) {
+				hour.innerHTML = string;
+		    });
+
+		    socket_tweet.on('tweet', function (string) {
+				tweet.innerHTML = string;
+		    });
+		</script>
+
+	</body>
+</html>
