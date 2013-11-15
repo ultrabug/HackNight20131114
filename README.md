@@ -10,9 +10,9 @@ A l'aide de l'API JavaScript de Twitter, afficher en temps réel un feed de twee
 
 Technologies utilisées
 ----------------------
-* back-end en gevent + socketio
-* javaScript pur pour le front
+* back-end en gevent + socketio (abourget/gevent-socketio) et flask
 * twython pour la partie streaming Twitter
+* javaScript pur pour le front
 
 Usage
 -----
